@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "productName": "ElectronNext",
+  "main": "main/index.js",
+  "scripts": {
+    "clean": "rimraf dist renderer/.next renderer/out",
+    "start": "electronmon .",
+    "build": "next build renderer && next export renderer",
+    "pack-app": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "asar": true,
+    "files": [
+      "main",
+      "renderer/out"
+    ]
+  },
+  "devDependencies": {
+    "electron-builder": "^23.0.3",
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "electron": "^22.0.0",
+    "electron-is-dev": "^2.0.0",
+    "electronmon": "^2.0.2",
+    "wait-on": "^6.0.1"
+  },
+  "dependencies": {
+    "electron-next": "^3.1.5"
+    
+  }
+}
