@@ -28,7 +28,7 @@ app.on('ready', async () => {
         slashes: true,
       })
 
-  mainWindow.webContents.openDevTools(true);
+  mainWindow.webContents.openDevTools(true,);
   mainWindow.loadURL(url)
 })
 
